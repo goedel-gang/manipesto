@@ -1,0 +1,64 @@
+\ProvidesPackage{mystyle}
+
+% so the title can be accessed by fancyhdr (and is automatically correctly
+% spelled etc)
+\makeatletter
+\let\thetitle\@title
+\let\theauthor\@author
+\makeatother
+
+% needed for colouring and stuff (xcolor supersedes color). provides LightSalmon
+\RequirePackage[x11names]{xcolor}
+
+% more advanced handling of utf8 and fonts or something. apparently good to have
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+
+% providing varheartsuit and vardiamondsuit
+\usepackage{pifont}
+
+% define how to draw suits from the unicode characters, which are being
+% intercepted by inputenc. No XeLaTeX or LuaLaTeX required.
+\usepackage{newunicodechar}
+\newunicodechar{♥}{{\color{red}\ding{170}}}
+\newunicodechar{♦}{{\color{red}\ding{169}}}
+\newunicodechar{♣}{\ding{168}}
+\newunicodechar{♠}{\ding{171}}
+
+% this is basically good for hyphenation if you're not sure about the locale
+\RequirePackage[UKenglish]{babel}
+
+% change geometry so more of page is used
+\RequirePackage[
+ margin=1in,
+ headheight=13.6pt]{geometry}
+
+% better fonts, apparently
+\RequirePackage{lmodern}
+% fixes some small caps things
+\RequirePackage{slantsc}
+
+% \url function and clickable table of contents. no ugly red boxes though
+\RequirePackage[hidelinks,pdfencoding=auto,psdextra,
+ pdfauthor={\theauthor},
+ pdftitle={\thetitle},
+ pdfsubject={\thetitle},
+ pdfproducer={LaTeX with hyperref},
+ pdfcreator={pdflatex}]{hyperref}
+
+% pretty table rules and multirow entries. Also page-breaking tables
+\RequirePackage{booktabs}
+\RequirePackage{multirow}
+\RequirePackage{longtable}
+
+% for better table of contents stuff, providing the \listof* commands and not
+% listing the tables in the table of contents
+\RequirePackage[nottoc,notlof,notlot]{tocbibind}
+
+% no paragraph indent - after tocloft because of starttoc
+\RequirePackage[parfill]{parskip}
+
+% make emph make text bold
+% TODO: really this should toggle bold, like \em toggles italic shape
+\let\emph\relax % there's no \RedeclareTextFontCommand
+\DeclareTextFontCommand{\emph}{\bfseries}

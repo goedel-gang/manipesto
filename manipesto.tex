@@ -1,0 +1,280 @@
+% a4 paper size, 11pt font
+% scartcl is the KOMA-script article class, which lets you do things like have a
+% subtitle.
+\documentclass[a4paper,11pt]{scrartcl}
+\author{Stjin van Dongen et al.}
+\title{Manipesto}
+\subtitle{The Complete and Unabridged Rules of Pesten}
+
+\usepackage{mystyle}
+
+% Mostly a faithful transcription of Stijn van Dongen's original manuscript
+
+\begin{document}
+ \maketitle\thispagestyle{empty} % no page number under title
+
+ \section{Introduction}
+
+ The first step to enlightenment is to realise that Uno is one of the biggest
+ scams ever to have been perpetrated in the history of tabletop games. The
+ Dutch, being exceptionally stingy by nature, realised this before Uno even
+ existed, and invented the game known as ``Pesten'', which requires only a
+ normal deck of cards. The name is a verb translating to something like
+ ``pestering'', ``antagonising'', or ``bullying'', which is (as in Uno) the aim
+ of the game.
+
+ It is in the family of ``Crazy Eights''-like card games
+ (see \url{https://en.wikipedia.org/wiki/Crazy_Eights}).
+
+ This document lays out the rules and regulations for Pesten according the van
+ Dongen house rules.
+
+ \section{Basic Play}
+
+ This is a game between two teams of equal size, so an even number of players is
+ needed. \emph{It is fun to play a best-of-seven match,} where the first team to
+ reach four points wins. Play best-of-five or three depending on time available.
+ \emph{In this description of the rules the parts in boldface convey the most
+ important information.} The rules are a little bit similar to Uno, with quite a
+ few differences and additions.
+
+ The game can be played without teams with any number of players, although team
+ play is more fun. In a two-player game the ten-rule and the King-rule have no
+ effect.
+
+ The game is normally played with two decks of normal cards, including Jokers,
+ although it works with any nonzero multiple of one as the number of decks.
+
+ \emph{Pesten is played with an even number of players arranged in a circle.}
+ The players are split into two teams, where \emph{players from the two teams
+ alternate positions.} If the teams are called A and B order of play is thus
+ a-b-a-b (et cetera). A team wins a round if one of its players is the first to
+ discard all their cards according to the rules. \emph{Players in a team work
+ together;} this is achieved by obstructing players from the other team and
+ supporting players in your own team. \emph{You are allowed to discuss (briefly)
+ theories about what suit someone in the opposing team may require if they are
+ close to going out. You are not allowed to discuss your own cards.}
+
+ Someone (the dealer) shuffles the cards and deals the cards until every player
+ has a hand of 7 cards. The dealer then turns a card, this is the first card of
+ the discard pile. \emph{If this card has special meaning it takes effect
+ immediately.} As usual, the role of dealer shifts to the next player
+ (clockwise) after every round. Normally after the first card is turned it is
+ the turn of the player sitting to the left of the dealer, unless the card is
+ one of 7, 8, 10, or King (see below). If the card is a Jack the dealer has to
+ call the suit first (see below).
+
+ \emph{When discarding, the card played has to match the card on top of the
+ discard pile, either by its suit or by its rank.} This means either the rank
+ (or face) is the same, or the suit is the same. When a Jack is on top of the
+ discard pile someone will have called the suit; in this case a match of suit
+ has to be with the one called. A Joker can be played on any card, unless a
+ two-sequence is active (see below).
+
+ \emph{If it is your turn and you can discard then you have to discard,} even
+ if your only option is a card you would like to save for later, such as a
+ Joker. If you cannot discard, you have to take a card from the pile. If this
+ new card cannot be played then your turn is over. If it can be played you have
+ to do this. Additionally, if you are then able to discard additional cards by
+ playing a set (see below), you are allowed but not required to do this.
+
+ \emph{If you are down to one card you have to knock and say 'Last card'.} This
+ is always required, including when you discard a set, or if you pick up from
+ the pile and play the new card. You have to do this before it is the next
+ player's turn. The next player is not supposed to suddenly up the pace of the
+ game to trick someone into being too slow; be gracious. Should you have
+ forgotten to knock or say 'Last card' you are given two penalty cards from the
+ pile. It may happen that you have to knock and say 'Last card' more than one
+ time in a single turn (this will involve playing a seven and picking up a card
+ from the pile).
+
+ \section{Meaning of the cards}
+
+ % a bit of hackery to put paragraphs inside a table. most of the parskip stuff
+ % is redundant but it means that if you want to add extra paragraphs, it's not
+ % a hassle.
+ % TODO: really this bit could be made a lot more DRY
+ \newlength{\currentparskip}
+ \setlength{\currentparskip}{\parskip}
+ \begin{longtable}{rl}
+  \toprule
+  \bfseries Card & \bfseries Meaning \\
+  \midrule
+  \endhead
+  2 & \begin{minipage}[t]{0.9\columnwidth}%
+  \setlength{\parskip}{\currentparskip}
+   \emph{Take two.} A 2 can be the start of a \emph{two-sequence.} If player A
+   plays a two then the next player B has to take two cards from the pile,
+   unless B can follow up and start a two-sequence. Following up can happen by
+   playing (I) any other 2 or (II) a 3 of the same suit. Then player C has to
+   take four (case I) or five (case II) cards, unless player C can follow up
+   again. This continues.
+
+   \emph{A two-sequence can always be extended by playing a card with the same
+   rank, or a card with the same suit but exactly one rank higher.} Once a
+   player X cannot extend the two-sequence, \emph{all ranks in the sequence are
+   summed and X has to take that number of cards from the pile and it is the
+   next player's turn.} In very rare cases, that are to be celebrated and woven
+   into tapestries, this may total 20, 30 or more cards.
+
+   \begin{itemize}
+    \item Sets (see below) are allowed in a two-sequence, refer to examples.
+    \item Only the last card in a set contributes to the total summed rank.
+    \item Should you get this far, in a two-sequence cards lose any other
+          special meaning, for example the seven is no longer sticky and the
+          eight does not wait.
+   \end{itemize}
+
+   It is common practice to keep low ranks such as three and four in your hand
+   for as long as possible as they may be put to use in a two-sequence. Should
+   someone discard a three, it may indicate they have few or no cards left of
+   that suit. \emph{You are allowed to share such knowledge with your
+   team-mates.}
+  \end{minipage} \vspace{0.5em} \\
+  7 & \begin{minipage}[t]{0.9\columnwidth}%
+   \setlength{\parskip}{\currentparskip}
+   \emph{Sticky seven. If you discard a seven it is still your turn} and you
+   need to discard again or pick up from the pile. The seven you played is in
+   immediate effect as the top card, so you need to play another seven, a card
+   of matching suit, or a joker.
+  \end{minipage} \vspace{0.5em} \\
+  8 & \begin{minipage}[t]{0.9\columnwidth}%
+   \setlength{\parskip}{\currentparskip}
+   \emph{Eight wait. The next player is skipped and foregoes their turn.}
+  \end{minipage} \vspace{0.5em} \\
+  10 & \begin{minipage}[t]{0.9\columnwidth}%
+   \setlength{\parskip}{\currentparskip}
+   \emph{Teen machine (washing cycle) / ten and again.} \\
+   \emph{Play takes one step back.} Suppose player T discards a ten. The player
+   B next to T, against the direction of play, gets a turn. This will usually be
+   the player who just had a turn before T did (unless an 8 was played). After
+   player B it will usually be T's turn again, unless B discards an 8, a 10 or a
+   King. \emph{When 10, 8 and Kings are played consecutively the potential for
+   confusion is great.} Pay attention! If a 10 is played on a 10, play takes
+   another step back in the same direction as the first step back. If a King is
+   played on a ten, play takes another step back in the same direction as the
+   first step back and additionally play continues in that direction.
+  \end{minipage} \vspace{0.5em} \\
+  J & \begin{minipage}[t]{0.9\columnwidth}%
+   \setlength{\parskip}{\currentparskip}
+   \emph{Jack (of all trades/suits).} \\
+   The player discarding the Jack has to call the suit that needs to be matched.
+   The next player can either play any card of the called suit, another Jack, or
+   a Joker.
+  \end{minipage} \vspace{0.5em} \\
+  K & \begin{minipage}[t]{0.9\columnwidth}%
+   \setlength{\parskip}{\currentparskip}
+   \emph{King fling / Reversking.} \\
+   \emph{The direction of play is changed.} If the current direction is A-B-C
+   and after A's turn B discards a King, then it is A's turn again and play
+   continues in that direction. Direction changes from clockwise to
+   counter-clockwise or vice versa.
+  \end{minipage} \vspace{0.5em} \\
+  \(\ast\) & \begin{minipage}[t]{0.9\columnwidth}%
+   \setlength{\parskip}{\currentparskip}
+   \emph{Joker take five.} \\
+   \emph{If a joker is discarded the next player V has to take five cards,}
+   unless V has a Joker - this Joker must be played and the next player W has to
+   take ten cards, unless W has a joker, and so on. \emph{In short, Jokers
+   stack. Jokers cannot be played in a two-sequence, and 2 cannot be played as a
+   response to a Joker.} It is possible to play a set of Jokers (see below). The
+   first player without a Joker has to pick up the total from the pile. After
+   this the same player must declare the new suit (but cannot discard), and it
+   is the next player's turn.
+  \end{minipage} \vspace{0.5em} \\
+  \bottomrule
+  \caption{Card meanings \label{tab_card_meanings}}
+ \end{longtable}
+
+ \section{Sets}
+
+ \emph{In every situation it is possible, if you have the right cards, to
+ discard a completing set or a new set.} In the first case (completing) you use
+ the top card on the discard pile and it will be part of the set. A set consists
+ of \emph{at least three cards of the same rank,} or of at \emph{least three
+ consecutive cards of the same suit} (either of increasing or decreasing rank).
+ If you complete a set using the top card of the discard pile then that card is
+ part of the set and the set is formed by discarding two or more cards. In the
+ second case, when discarding a new set, the first card in the set has to fit on
+ top of the pile according to the normal rules and you discard at least three
+ cards. A set may consist of more than three cards, as long as they are either
+ of the same rank or strictly consecutive of the same suit.
+
+ \emph{Only the last card in a set has its special meaning (if any), other cards
+ in the set lose any special meaning.} The last card in a set will be the card
+ on top of the discard pile.
+
+ \begin{itemize}
+  \item \emph{When discarding a new set, the first discarded card has to fit on
+        top of the pile according to the normal rules.} For example, on ♥5 you
+        can discard ♥10 ♥J ♥Q, or ♥10 ♦10 ♣10, or ♣5 ♣4 ♣3, or ♠5 ♠6 ♠7 ♠8. In
+        the first case the last discarded card (♥Q) has no special meaning and
+        ♥10 loses its special meaning. If you discard in decreasing order, ♥Q ♥J
+        ♥10 the ♥10 retains it special meaning. \emph{When completing} you could
+        add to the ♥5 on top of the file, for example ♥4 ♥3, ♦5 ♣5, or ♥6 ♥7.
+  \item \emph{If the last card in your set is 7 it is still your turn.} The next
+        card you play can be any card normally allowed after a 7, this could
+        even be the start of another set. For example following ♥5 ♥6 ♥7 you
+        could discard ♥A ♣A ♦A or ♥10 ♥J ♥Q or ♥Q ♥J ♥10.
+  \item \emph{Sets with cards of the same rank can have repeated suits,} thus ♥6
+        ♥6 ♠6 is fine.
+  \item \emph{It is possible to discard a set in a two-sequence.} In summary:
+        the set can either be a completing set or a new set and \emph{the result
+        should fit in the two-sequence (no gap allowed in the ranks)}. Suppose
+        on top of the pile is a card with rank V and suit S and we are currently
+        in a two-sequence. The first card in your set has to fit in the
+        sequence, so either it has the same rank V or it has rank V+1 and the
+        same suit S. Your set can take various forms:
+        \begin{itemize}
+         \item all with the same rank V (two or more cards).
+         \item all with rank V+1 (three or more cards) if the first has suit S.
+               consecutive, increasing and of identical suit if the first card
+               has rank V.
+         \item consecutive, increasing and of the same suit V if the first card
+               has rank W+1.
+        \end{itemize} Only the last card in the set contributes towards the
+        total of the two-sequence. See also examples further below.
+  \item \emph{In theory it is allowed to put two or more Jokers on a Joker to
+        complete a set, or to discard three or more Jokers as a set.} In
+        practice this opportunity rarely arises and it may be unwise to utilise
+        should it happen. Only the last Joker is special, so the set adds 5 to
+        the current tally. We have never experienced a game where a team won by
+        discarding two or more jokers, \emph{please send a witness report in the
+        form of a tapestry if this happens.}
+  \item If a Jack is discarded and a suit is called, then J Q K or J 10 9 are
+        valid sets regardless of the set suit.
+  \item \emph{As in other card games, Ace can perform the role of 1.} Hence 3 2
+        A and A 2 3 are valid sets. It is possible to continue beyond from H to
+        A to 1 or the other way round.
+ \end{itemize}
+
+ \section{Examples of sets in play}
+
+ ♥2 is on top of the pile as part of a two-sequence. Some examples of continuing play with a set:
+
+ \begin{itemize}
+  \item Two or more 2s. This contributes only two towards the two-sequence
+        total.
+  \item ♥3 ♥4 (a completing set for ♥2). This contributes four towards the
+        total.
+  \item ♥3 ♥4 ♥5 - contributes five towards the total.
+  \item ♥3 ♥4 ♥5 ♥6 - contributes six, and so on.
+  \item ♦2 ♦3 ♦4 (a new set). Contributes four.
+  \item ♥3 ♣3 ♦3 (a new set). Contributes three.
+  \item ♥4 ♥5 ♥6 is not allowed because of the gap between ♥2 and ♥4.
+ \end{itemize}
+
+ ♥6 is on top of the pile and is not part of a two-sequence. This gives more
+ options, as sets of consecutive cards can be decreasing, and new sets have no
+ restriction on gaps as in the case of two-sequences (only options that would
+ not be allowed in a two-sequence are shown):
+
+ \begin{itemize}
+  \item Three or more 9s provided the first card is ♥9 (mind the gap)
+  \item ♥Q ♥K ♥A (gap)
+  \item ♥5 ♥4 (decreasing)
+  \item ♠6 ♠5 ♠4 (decreasing)
+ \end{itemize}
+
+ Happy Pesten!
+\end{document}
