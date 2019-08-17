@@ -15,12 +15,12 @@
 \RequirePackage[T1]{fontenc}
 
 % providing varheartsuit and vardiamondsuit
-\usepackage{pifont}
+\RequirePackage{pifont}
 
 % define how to draw suits from the unicode characters, which are being
 % intercepted by inputenc. No XeLaTeX or LuaLaTeX required.
 % https://tex.stackexchange.com/questions/9641/filled-diamondsuit-and-heartsuit
-\usepackage{newunicodechar}
+\RequirePackage{newunicodechar}
 \newunicodechar{♥}{{\color{red}\ding{170}}}
 \newunicodechar{♦}{{\color{red}\ding{169}}}
 \newunicodechar{♣}{\ding{168}}
